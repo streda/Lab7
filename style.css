@@ -19,7 +19,7 @@ body .div-settings {
   display: none;
 }
 
-/* Settings CSS */
+                    /* Settings CSS */
 body.settings {
   background-color: rgb(222, 220, 220);
 }
@@ -43,7 +43,7 @@ body.settings main {
 body.settings .div-settings {
   display: block;
 }
-/* Setttings CSS End */
+                          /* Setttings CSS End */
 
 /* Single Entry CSS Start */
 body.single-entry entry-page {

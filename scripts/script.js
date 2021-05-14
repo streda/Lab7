@@ -12,7 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         let newPost = document.createElement('journal-entry');
         newPost.entry = entry;
+        newPost.addEventListener("click", function (e){
+        /*console.log(this.entry); */
+          router.setState("single-entry", this.entry)
+        });
         document.querySelector('main').appendChild(newPost);
       });
     });
 });
+
+
+document.getElementById("settingsbutton").addEventListener("click", () =>{
+  router.setState("settings")
+});
+
+document.getElementById("homebutton").addEventListener("click", () =>{
+  router.setState("home")
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
